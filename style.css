@@ -106,6 +106,22 @@ html {
   }
 }
 /* End of Main Button */
+
+/* Section Heading */
+.section-heading {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 10rem;
+  transform: translateY(-50%);
+  width: 0;
+  word-break: break-all;
+  line-height: 4;
+}
+/* End of Section Heading */
 /* End of Common Styles */
 
 /* Mouse Circle */
@@ -309,22 +325,6 @@ html {
   position: relative;
   padding: 10rem 10rem 15rem 10rem;
 }
-
-/* Section 2 Heading */
-.section-2-heading {
-  font-size: 2rem;
-  font-weight: 300;
-  color: #fff;
-  text-transform: uppercase;
-  position: absolute;
-  top: 50%;
-  left: 10rem;
-  transform: translateY(-50%);
-  width: 0;
-  word-break: break-all;
-  line-height: 4;
-}
-/* End of Section 2 Heading */
 
 /* About Me Text */
 .about-me-text {
