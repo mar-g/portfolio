@@ -88,6 +88,16 @@ const navbar = document.querySelector('.navbar');
 document.addEventListener('scroll', () => {
   menuIcon.classList.add("show-menu-icon");
   navbar.classList.add("hide-navbar");
+
+  if (window.scrollY === 0) {
+    menuIcon.classList.remove("show-menu-icon");
+  navbar.classList.remove("hide-navbar");
+  }
+})
+
+menuIcon.addEventListener("click", () => {
+  menuIcon.classList.remove("show-menu-icon");
+  navbar.classList.remove("hide-navbar");
 })
 // End of Navigation
 
