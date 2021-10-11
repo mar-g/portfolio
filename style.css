@@ -199,6 +199,29 @@ html {
 }
 /* End of Page BG */
 
+/* Navigation */
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3rem;
+}
+
+.navbar-link {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 2.5rem;
+  z-index: 100;
+  text-shadow: 0 0.3rem 0.5rem #000;
+}
+/* End ofNavbar */
+/* End of Navigation */
+
 /* Section 1 */
 .section-1 {
   position: relative;
