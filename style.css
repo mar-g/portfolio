@@ -200,6 +200,32 @@ html {
 /* End of Page BG */
 
 /* Navigation */
+/* Menu Icon */
+.menu-icon {
+  position: fixed;
+  top: 0;
+  right: 6rem;
+  width: 12rem;
+  height: 7rem;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s;
+}
+
+.menu-icon-line {
+  width: 4rem;
+  height: 0.1rem;
+  background-color: #fff;
+  margin: 0.5rem 0;
+  box-shadow: 0 0.3rem 0.5rem #000;
+}
+
+.show-menu-icon {
+  opacity: 1;
+  visibility: visible;
+}
+/* End of Menu Icon */
 /* Navbar */
 .navbar {
   position: fixed;
@@ -208,6 +234,7 @@ html {
   display: flex;
   justify-content: flex-end;
   padding-right: 3rem;
+  transition: opacity .5s, visibility 0.5s, transform 0.5s;
 }
 
 .navbar-link {
@@ -218,6 +245,12 @@ html {
   margin: 0 2.5rem;
   z-index: 100;
   text-shadow: 0 0.3rem 0.5rem #000;
+}
+
+.hide-navbar {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10rem);
 }
 /* End ofNavbar */
 /* End of Navigation */
