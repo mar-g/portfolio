@@ -579,6 +579,8 @@ html {
   height: 0;
   background-color: rgba(0, 0, 0, 0.9);
   overflow: hidden scroll;
+  z-index: 100;
+  scroll-behavior: smooth;
   animation: imgWrapperAnim 1s forwards;
 }
 
@@ -596,6 +598,7 @@ html {
   border-radius: 0.5rem;
   padding: 7rem 20rem;
   opacity: 0.9;
+  display:block;
   transform-origin: top center;
   animation: imgAnim 1s 1s both;
 }
@@ -621,7 +624,7 @@ html {
   font-size: 2rem;
   letter-spacing: 0.1rem;
   cursor: pointer;
-  z-index: 10;
+  z-index: 200;
   transform: scale(0);
   visibility: hidden;
 }
