@@ -227,7 +227,7 @@ html {
 }
 
 .half-circle:nth-child(2) {
-  background-color:#b60000;
+  background-color: #b60000;
 }
 
 .half-circle-top {
@@ -257,6 +257,7 @@ html {
   color: #fff;
   font-size: 4rem;
   z-index: 200;
+  transition: transform .5s;
 }
 /* End of Progress Bar */
 
@@ -273,7 +274,7 @@ html {
   visibility: hidden;
   z-index: 100;
   cursor: pointer;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 
 .menu-icon-line {
@@ -298,7 +299,7 @@ html {
   justify-content: flex-end;
   padding-right: 3rem;
   z-index: 100;
-  transition: opacity .5s, visibility 0.5s, transform 0.5s;
+  transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
 }
 
 .navbar-link {
@@ -752,7 +753,7 @@ html {
 
 .contact-form-textarea {
   height: 20rem;
-  resize:none;
+  resize: none;
 }
 
 .form-submit-btn {
@@ -775,7 +776,7 @@ html {
 
 .slideshow-link {
   width: 20%;
-  filter: brightness(.5);
+  filter: brightness(0.5);
   transition: filter 1.5s;
 }
 
@@ -785,12 +786,12 @@ html {
 }
 
 .slideshow-link:nth-child(3) {
-  transition: filter .5s;
+  transition: filter 0.5s;
 }
 
 .slideshow-link img {
-width: 100%;
-padding: 0 1rem;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .faded-out {
@@ -799,7 +800,7 @@ padding: 0 1rem;
 }
 
 .light {
-  filter:brightness(1.5);
+  filter: brightness(1.5);
 }
 
 /* End of Slideshow */

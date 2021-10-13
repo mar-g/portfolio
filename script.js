@@ -82,18 +82,21 @@ mainBtns.forEach((btn) => {
 // End of Main Button
 
 // Progres Bar
-const halfCircles = document.querySelectorAll('.half-circle');
-const halfCirclesTop = document.querySelector('.half-circle-top');
-const progressBarCircle = document.querySelector('.progress-bar-circle');
+const sections = document.querySelectorAll("section");
+const progressBar = document.querySelector(".progress-bar");
+const halfCircles = document.querySelectorAll(".half-circle");
+const halfCirclesTop = document.querySelector(".half-circle-top");
+const progressBarCircle = document.querySelector(".progress-bar-circle");
 
 const progressBarFn = () => {
   const pageViewportHeight = window.innerHeight;
   const pageHeight = document.documentElement.scrollHeight;
   const scrolledPortion = window.pageYOffset;
 
-  const scrolledPortionDegree = (scrolledPortion / (pageHeight - pageViewportHeight)) * 360;
+  const scrolledPortionDegree =
+    (scrolledPortion / (pageHeight - pageViewportHeight)) * 360;
 
-  halfCircles.forEach(el => {
+  halfCircles.forEach((el) => {
     el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
 
     if (scrolledPortionDegree >= 180) {
@@ -102,35 +105,60 @@ const progressBarFn = () => {
     } else {
       halfCirclesTop.style.opacity = "1";
     }
-  })
+  });
 
+  const scrollBool = scrolledPortion + pageViewportHeight === pageHeight;
+
+  // Progress Bar Click
+  progressBar.onclick = (e) => {
+    e.preventDefault();
+    const sectionPositions = Array.from(sections).map((section) => {
+      return scrolledPortion + section.getBoundingClientRect().top;
+    });
+
+    const position = sectionPositions.find((sectionPosition) => {
+      return sectionPosition > scrolledPortion;
+    });
+
+    scrollBool ? window.scrollTo(0, 0) : window.scrollTo(0, position);
+    console.log(position);
+  };
+  // End of Progress Bar Click
+  // Arrow Rotation
+if (scrollBool) {
+  progressBarCircle.style.transform = "rotate(180deg)";
+} else {
+  progressBarCircle.style.transform = "rotate(0)";
 }
+// End of Arrow Rotation
+};
 
 
+
+progressBarFn();
 
 // End of Progres Bar
 
-
 // Navigation
-const menuIcon = document.querySelector('.menu-icon');
-const navbar = document.querySelector('.navbar');
+const menuIcon = document.querySelector(".menu-icon");
+const navbar = document.querySelector(".navbar");
 
-document.addEventListener('scroll', () => {
+document.addEventListener("scroll", () => {
   menuIcon.classList.add("show-menu-icon");
   navbar.classList.add("hide-navbar");
 
   if (window.scrollY === 0) {
     menuIcon.classList.remove("show-menu-icon");
-  navbar.classList.remove("hide-navbar");
+    navbar.classList.remove("hide-navbar");
   }
 
   progressBarFn();
-})
+});
 
 menuIcon.addEventListener("click", () => {
   menuIcon.classList.remove("show-menu-icon");
   navbar.classList.remove("hide-navbar");
-})
+});
 // End of Navigation
 
 //About Me Text
@@ -296,11 +324,10 @@ setInterval(() => {
   setTimeout(() => {
     slideshow.removeChild(firstIcon);
     slideshow.appendChild(firstIcon);
-    
+
     setTimeout(() => {
       firstIcon.classList.remove("faded-out");
     }, 500);
-    
   }, 500);
 }, 3000);
 // End of Slideshow
