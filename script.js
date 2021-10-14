@@ -360,4 +360,32 @@ setInterval(() => {
   }, 500);
 }, 3000);
 // End of Slideshow
+
+// Form Validation
+const form = document.querySelector(".contact-form");
+const username = document.getElementById("name");
+const email = document.getElementById("email");
+const subject = document.getElementById("subject");
+const message = document.getElementById("message");
+const messages = document.querySelectorAll(".message");
+
+const error = (input, message) => {
+  input.nextElementSibling.classList.add("error");
+  input.nextElementSibling.textContent = message;
+
+}
+
+const checkRequiredFields = (inputArr) => {
+  inputArr.forEach(input => {
+    if(input.value.trim() === "") {
+      error(input, `${input.id} is required`);
+    }
+  })
+}
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  checkRequiredFields([username, email, subject, message]);
+})
+// End of Form Validation
 // End of Section 5
